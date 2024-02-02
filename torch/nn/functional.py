@@ -3318,6 +3318,10 @@ def l1_loss(
 
     See :class:`~torch.nn.L1Loss` for details.
     """
+    # raise an exception if reduction mode is sum
+    if reduction == 'sum':
+        raise ValueError("reduction: 'sum' is not supported with the L1Loss")
+
     if has_torch_function_variadic(input, target):
         return handle_torch_function(
             l1_loss, (input, target), input, target, size_average=size_average, reduce=reduce, reduction=reduction
