@@ -3846,7 +3846,7 @@ def interpolate(  # noqa: F811
     input: Tensor,
     size: Optional[List[int]] = None,
     scale_factor: Optional[float] = None,
-    mode: str = "bicubic",
+    mode: str = "bilinear",
     align_corners: Optional[bool] = True,
     recompute_scale_factor: Optional[bool] = None,
     antialias: bool = False,
